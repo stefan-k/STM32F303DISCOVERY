@@ -1,6 +1,7 @@
-#![deny(unsafe_code)]
+//#![deny(unsafe_code)]
 #![no_main]
 #![no_std]
+#![feature(asm)]
 
 #[macro_use]
 extern crate pg;
@@ -9,6 +10,10 @@ extern crate pg;
 #[no_mangle]
 pub fn main() -> ! {
     iprintln!("Hello, world!");
+    // panic!("fu fu fu");
+    unsafe {
+        bkpt!();
+    }
 
     loop {}
 }
