@@ -10,14 +10,16 @@ use pg::led::LEDS;
 #[inline(never)]
 #[no_mangle]
 pub fn main() -> ! {
-    let half_period = 50; // ms
+    let half_period = 250; // ms
 
     LEDS[0].on();
     let mut idx = 1;
     loop {
         LEDS[idx % 8].on();
+        // LEDS[idx].on();
         delay::ms(half_period);
         LEDS[(idx - 1) % 8].off();
+        // LEDS[(idx - 1)].off();
         delay::ms(half_period);
         idx += 1;
     }
