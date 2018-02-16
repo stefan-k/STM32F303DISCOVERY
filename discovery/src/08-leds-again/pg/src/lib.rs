@@ -8,7 +8,7 @@ extern crate f3;
 
 /// Low level access to peripherals
 pub mod peripheral {
-    pub use f3::peripheral::{rcc, rcc_mut, gpioe, gpioe_mut};
+    pub use f3::peripheral::{gpioe, gpioe_mut, rcc, rcc_mut};
 }
 
 // Override the `init` routine to NOT initialize the GPIOE port
